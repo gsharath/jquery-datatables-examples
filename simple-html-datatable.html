@@ -1,0 +1,33 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="libs/css/jquery.dataTables.min.css">
+</head>
+<body>
+    <table id='simpleDt'>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <tr>
+            <td>1</td>
+            <td>a</td>
+            <td>2999</td>
+            <td>Hyderabad</td>
+        </tr>
+    </table>
+    <script type="text/javascript" charset="utf8" src="libs/js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="libs/js/jquery.dataTables-1-10-20.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            console.log('ready')
+            $("#simpleDt").dataTable();
+
+        })
+    </script>
+</body>
+
+</html>
