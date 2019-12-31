@@ -1,31 +1,56 @@
 <html>
+
 <head>
     <link rel="stylesheet" type="text/css" href="libs/css/jquery.dataTables.min.css">
 </head>
+
 <body>
     <table id='simpleDt'>
         <thead>
             <tr>
-                <th>Name</th>
-                <th>Position</th>
-                <th>Office</th>
-                <th>Age</th>
+                <th>Make</th>
+                <th>Model</th>
+                <th>Price</th>
+                <th>Year</th>
+                <th>Body Style</th>
             </tr>
         </thead>
-        <tr>
-            <td>1</td>
-            <td>a</td>
-            <td>2999</td>
-            <td>Hyderabad</td>
-        </tr>
+        <tbody>
+            <tr>
+                <td>BMW</td>
+                <td></td>
+                <td>20000</td>
+                <td>2018</td>
+                <td>Sedan</td>
+            </tr>
+            <tr>
+                <td>Ford</td>
+                <td></td>
+                <td>40000</td>
+                <td>2017</td>
+                <td>Wagon</td>
+            </tr>
+            <tr>
+                <td>Acura</td>
+                <td>MDX</td>
+                <td>30000</td>
+                <td>2019</td>
+                <td>SUV</td>
+            </tr>
+            <tr>
+                <td>Acura</td>
+                <td>ILX</td>
+                <td>10000</td>
+                <td>2011</td>
+                <td>Sedan</td>
+            </tr>
+        </tbody>
     </table>
     <script type="text/javascript" charset="utf8" src="libs/js/jquery-3.4.1.min.js"></script>
     <script type="text/javascript" charset="utf8" src="libs/js/jquery.dataTables-1-10-20.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
-            console.log('ready')
             $("#simpleDt").dataTable();
-
         })
     </script>
 </body>
