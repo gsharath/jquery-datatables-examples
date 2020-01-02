@@ -1,0 +1,49 @@
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="libs/css/jquery.dataTables.min.css">
+</head>
+
+<body>
+    <table id='simpleDt'>
+    </table>
+    <script type="text/javascript" charset="utf8" src="libs/js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="libs/js/jquery.dataTables-1-10-20.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            const vehiclesList = [
+                {
+                    "make": "BMW",
+                    "price": 50000,
+                    "year": 2018,
+                    "bodyStyle": "Sedan",
+                },
+                {
+                    "make": "Ford",
+                    "price": 50000,
+                    "year": 2017,
+                    "bodyStyle": "Wagon",
+                },
+                {
+                    "make": "Acura",
+                    "price": 50000,
+                    "year": 2019,
+                    "bodyStyle": "SUV",
+                }
+            ];
+
+            $("#simpleDt").dataTable({ 
+                data: vehiclesList,
+                columns: [
+                    {title: 'make', field: 'make'},
+                    {title: 'price',field: 'price'},
+                    {title: 'year', field: 'year'},
+                    {title: 'bodyStyle', field: 'bodyStyle'},
+                ],
+            });
+        })
+    </script>
+</body>
+
+</html>

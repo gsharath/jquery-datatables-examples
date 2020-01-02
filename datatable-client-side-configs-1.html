@@ -1,0 +1,28 @@
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="libs/css/jquery.dataTables.min.css">
+</head>
+
+<body>
+    <table id='clientSideConfigDT'>
+    </table>
+    <script type="text/javascript" charset="utf8" src="libs/js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="libs/js/jquery.dataTables-1-10-20.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#clientSideConfigDT").dataTable({
+                columns: [
+                    { data: "make", title: 'Make' },
+                    { data: "price", title: 'Price' },
+                    { data: "year", title: 'Year' },
+                    { data: "transmission", title: 'Transmission' },
+                    { data: "bodyStyle", title: 'Body Style' },
+                ],
+                ajax: 'http://localhost:4000/vehicles'
+            });
+        })
+    </script>
+</body>
+
+</html>
