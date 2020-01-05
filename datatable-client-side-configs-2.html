@@ -13,15 +13,14 @@
         $(document).ready(function () {
             $("#clientSideConfigDT2").dataTable({
                 columns: [
-                    { data: "make", title: 'Make' },
-                    { data: "price", title: 'Price' },
-                    { data: "year", title: 'Year' },
-                    { data: "transmission", title: 'Transmission' },
-                    { data: "bodyStyle", title: 'Body Style' },
+                    { data: "firstName", title: 'First Name' },
+                    { data: "lastName", title: 'Last Name' },
+                    { data: "gender", title: 'Gender' },
+                    { data: "jobTitle", title: 'Job Title' }
                 ],
                 ajax: {
-                   "url": 'http://localhost:4000/just_vehicles',
-                   "dataSrc":''
+                    "url": 'http://localhost:5000/employeesForClientSideDT2',
+                    "dataSrc": 'employeeList'
                 }
             });
         })

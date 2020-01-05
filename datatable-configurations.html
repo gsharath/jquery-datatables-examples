@@ -1,0 +1,53 @@
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="libs/css/jquery.dataTables.min.css">
+</head>
+
+<body>
+    <table id='configurationsDT1'>
+    </table>
+    <script type="text/javascript" charset="utf8" src="libs/js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="libs/js/jquery.dataTables-1-10-20.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#configurationsDT1").dataTable({
+                "language": {
+                    loadingRecords: 'Loading employee records....',
+                    info: "Showing _START_ to _END_ of _TOTAL_ Employees",
+                    lengthMenu: "Show _MENU_ Employees",
+                    search: "Search employees:",
+                    zeroRecords: "No matching Employees found",
+                    paginate: {
+                        first: "<First>",
+                        last: "<Last>",
+                        next: "<Next>",
+                        previous: "<Previous>"
+                    },
+                },
+                aoColumns: [
+                    {
+                        data: 'Full Name',
+                        title: 'Full Name',
+                        render: function (data, type, row, meta) {
+                            return `<b>${row.lastName}, ${row.firstName}</b>`;
+                        }
+                    },
+                    { data: "gender", title: 'Gender' },
+                    { data: "jobTitle", title: 'Job Title' }
+                ],
+                ajax: 'http://localhost:5000/employeesForClientSideDT1',
+                rowCallback: function (row, data, displayNum, displayIndex, dataIndex) {
+                    if (data.experience <= 3) {
+                        $(row).attr('style', 'background-color: #a5eaa5');
+                    }
+                    else if (data.experience > 3 && data.experience <= 7) {
+                        $(row).attr('style', 'background-color: #d6d6fb');
+                    }
+                }
+            });
+        })
+    </script>
+</body>
+
+</html>

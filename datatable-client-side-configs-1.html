@@ -5,21 +5,20 @@
 </head>
 
 <body>
-    <table id='clientSideConfigDT'>
+    <table id='clientSideConfigDT1'>
     </table>
     <script type="text/javascript" charset="utf8" src="libs/js/jquery-3.4.1.min.js"></script>
     <script type="text/javascript" charset="utf8" src="libs/js/jquery.dataTables-1-10-20.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
-            $("#clientSideConfigDT").dataTable({
+            $("#clientSideConfigDT1").dataTable({
                 columns: [
-                    { data: "make", title: 'Make' },
-                    { data: "price", title: 'Price' },
-                    { data: "year", title: 'Year' },
-                    { data: "transmission", title: 'Transmission' },
-                    { data: "bodyStyle", title: 'Body Style' },
+                    { data: "firstName", title: 'First Name' },
+                    { data: "lastName", title: 'Last Name' },
+                    { data: "gender", title: 'Gender' },
+                    { data: "jobTitle", title: 'Job Title' }
                 ],
-                ajax: 'http://localhost:4000/vehicles'
+                ajax: 'http://localhost:5000/employeesForClientSideDT1'
             });
         })
     </script>

@@ -14,32 +14,32 @@
 
             const vehiclesList = [
                 {
-                    "make": "BMW",
-                    "price": 50000,
-                    "year": 2018,
-                    "bodyStyle": "Sedan",
+                    "firstName": "Jon",
+                    "lastName": "Alaric",
+                    "gender": "male",
+                    "jobTitle": "Internal Functionality Officer",
                 },
                 {
-                    "make": "Ford",
-                    "price": 50000,
-                    "year": 2017,
-                    "bodyStyle": "Wagon",
+                    "firstName": "Eriberto",
+                    "lastName": "Thompson",
+                    "gender": "male",
+                    "jobTitle": "Dynamic Web Executive",
                 },
                 {
-                    "make": "Acura",
-                    "price": 50000,
-                    "year": 2019,
-                    "bodyStyle": "SUV",
+                    "firstName": "Mallie",
+                    "lastName": "Kozey",
+                    "gender": "male",
+                    "jobTitle": "Lead Paradigm Planner",
                 }
             ];
 
-            $("#simpleDt").dataTable({ 
+            $("#simpleDt").dataTable({
                 data: vehiclesList,
                 columns: [
-                    {title: 'make', field: 'make'},
-                    {title: 'price',field: 'price'},
-                    {title: 'year', field: 'year'},
-                    {title: 'bodyStyle', field: 'bodyStyle'},
+                    { data: "firstName", title: 'First Name' },
+                    { data: "lastName", title: 'Last Name' },
+                    { data: "gender", title: 'Gender' },
+                    { data: "jobTitle", title: 'Job Title' }
                 ],
             });
         })

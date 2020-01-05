@@ -14,14 +14,14 @@
             $("#serverSideConfigDT1").dataTable({
                 bServerSide: true,
                 columns: [
-                    { data: "firstName", title: 'firstName' },
-                    { data: "lastName", title: 'lastName' },
+                    { data: "firstName", title: 'First Name' },
+                    { data: "lastName", title: 'Last Name' },
+                    { data: "gender", title: 'Gender' },
                     { data: "jobTitle", title: 'Job Title' },
-                    { data: "gender", title: 'gender' },
                 ],
                 ajax: {
                     "url": 'http://localhost:5000/employeesForServerSideDT',
-                    "dataSrc":'employeeList',
+                    "dataSrc": 'employeeList',
                     "type": 'POST',
                     "data": function (d) {
                         d.startCount = d.start;
