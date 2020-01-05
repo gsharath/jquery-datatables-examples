@@ -5,7 +5,7 @@
 </head>
 
 <body>
-    <table id='javascriptObjectDT'>
+    <table id='simpleDt'>
     </table>
     <script type="text/javascript" charset="utf8" src="libs/js/jquery-3.4.1.min.js"></script>
     <script type="text/javascript" charset="utf8" src="libs/js/jquery.dataTables-1-10-20.min.js"></script>
@@ -18,22 +18,25 @@
                     "lastName": "Alaric",
                     "gender": "male",
                     "jobTitle": "Internal Functionality Officer",
+                    "isActive": true
                 },
                 {
                     "firstName": "Eriberto",
                     "lastName": "Thompson",
                     "gender": "male",
                     "jobTitle": "Dynamic Web Executive",
+                    "isActive": false
                 },
                 {
                     "firstName": "Mallie",
                     "lastName": "Kozey",
                     "gender": "male",
                     "jobTitle": "Lead Paradigm Planner",
+                    "isActive": true
                 }
             ];
 
-            $("#javascriptObjectDT").dataTable({
+            $("#simpleDt").dataTable({
                 data: employeeList,
                 columns: [
                     { data: "firstName", title: 'First Name' },
