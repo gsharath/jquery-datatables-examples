@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="libs/css/jquery.dataTables.min.css">
+</head>
+
+<body>
+    <table id='serverSideConfigDT1'>
+    </table>
+    <script type="text/javascript" charset="utf8" src="libs/js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="libs/js/jquery.dataTables-1-10-20.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#serverSideConfigDT1").dataTable({
+                bServerSide: true,
+                columns: [
+                    { data: "firstName", title: 'firstName' },
+                    { data: "lastName", title: 'lastName' },
+                    { data: "jobTitle", title: 'Job Title' },
+                    { data: "gender", title: 'gender' },
+                ],
+                ajax: {
+                    "url": 'http://localhost:5000/employeesForServerSideDT',
+                    "dataSrc":'employeeList',
+                    "type": 'POST',
+                    "data": function (d) {
+                        d.startCount = d.start;
+                        d.pageLength = d.length;
+                    }
+                }
+            });
+        })
+    </script>
+</body>
+
+</html>
